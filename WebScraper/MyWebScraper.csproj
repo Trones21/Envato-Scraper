@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DA00975-559A-4687-A46E-4786E6D6AA1D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MyWebScraper</RootNamespace>
+    <AssemblyName>MyWebScraper</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\Jobs\Envato\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="IronWebScraper, Version=4.0.4.29861, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronWebScraper.4.0.4.3\lib\net452\IronWebScraper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Author\Author.cs" />
+    <Compile Include="Author\AuthorViaListScraper.cs" />
+    <Compile Include="Author\AuthorScraper.cs" />
+    <Compile Include="Collection\Collection.cs" />
+    <Compile Include="Collection\CollectionScraper.cs" />
+    <Compile Include="Migrations\201902211024507_VerticalFilters.cs" />
+    <Compile Include="Migrations\201902211024507_VerticalFilters.Designer.cs">
+      <DependentUpon>201902211024507_VerticalFilters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Product\Comment.cs" />
+    <Compile Include="Product\DetailsChangeset.cs" />
+    <Compile Include="Product\License.cs" />
+    <Compile Include="Product\Attribute.cs" />
+    <Compile Include="Product\Product.cs" />
+    <Compile Include="Product\PortfolioScraper.cs" />
+    <Compile Include="_Generic\CategoryStatsScraper.cs" />
+    <Compile Include="Product\Review.cs" />
+    <Compile Include="Product\Stats.cs" />
+    <Compile Include="Product\Tag.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_Generic\LogWriter.cs" />
+    <Compile Include="_Generic\MasterLists.cs" />
+    <Compile Include="_Generic\ParameterizedQueries.cs" />
+    <Compile Include="_Generic\QueryResult.cs" />
+    <Compile Include="_Generic\TestScraper.cs" />
+    <Compile Include="_Generic\UnsortedMethods.cs" />
+    <Compile Include="_Generic\PageCountScrapers.cs" />
+    <Compile Include="_Generic\WebScrapeDbContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
+    <None Include="packages.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
+    <None Include="packages.Debug.config">
+      <DependentUpon>packages.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="packages.Release.config">
+      <DependentUpon>packages.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GetRandomhttpIdentities\GetRandomhttpIdentities\GetRandomhttpIdentities.csproj">
+      <Project>{1bcf4993-2c92-45e9-94f8-81889ae7b215}</Project>
+      <Name>GetRandomhttpIdentities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmailSender\EmailSender.csproj">
+      <Project>{822e1008-b0e2-4f6f-ae16-c19e1c314f05}</Project>
+      <Name>EmailSender</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Stored Procedures\CreateTempTables.sql" />
+    <Content Include="Stored Procedures\dbo.AddAuthor.sql" />
+    <Content Include="Stored Procedures\dbo.CounthasChangedSinceLastMaxDate.sql" />
+    <Content Include="Stored Procedures\dbo.ListScrapeMisses.sql" />
+    <Content Include="Stored Procedures\dbo.UpdateAuthorName.sql" />
+    <Content Include="Stored Procedures\dbo.UpdateChangeSetIDObjects.sql" />
+    <Content Include="Stored Procedures\SP_Sandbox.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201902211024507_VerticalFilters.resx">
+      <DependentUpon>201902211024507_VerticalFilters.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.VisualStudio.SlowCheetah.3.1.66\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.1.66\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.1.66\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.SlowCheetah.3.1.66\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
+  </Target>
+</Project>

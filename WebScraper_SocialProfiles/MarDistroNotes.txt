@@ -1,0 +1,28 @@
+﻿
+Options
+
+Will probably be different for each platform. I should probably have another project or UiPath (UiPath likely > C# class lib) 
+
+Direct Messages - Should probably just monitor this and then decide the process flows
+Chatbots- Need to be very simple templates, I do not have the manpower to do anything sophisticated. (or RNN :P)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

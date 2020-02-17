@@ -1,2 +1,2 @@
-# EnvatoAnalytics
-Analytics platform for sellers on the Envato Marketplace
+# Envato Scraper
+Scraping sales data on the Envato Marketplace
